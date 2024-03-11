@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/0c/7a/12/0c7a121aefc6e921f386f95f06b47c4b.jpg">
+    <title>Tabuada</title>
+</head>
+<body>
+    <main>
+        <h1>Gerador de Tabuada</h1>
+        <img id="gato" src="https://media0.giphy.com/media/dWTi2yiBnSq1K2MkTE/giphy.gif?cid=790b76118dfkxhgnsovbyrizlv5aq5twcg1li188g0qlpfzk&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="">
+        <div id="container">
+            <div class="itens">
+                <div id="tabuada"></div>
+                <div class="source">
+                    <input type="number" id="numInput" placeholder="Digite um número">
+                    <button onclick="geradorTabuada()">Gerar Tabuada</button>
+                </div>
+        </div>
+    </div>
+
+    <div>
+        <img id="cat" src="https://media4.giphy.com/media/m4jlxSrYaGn49x8H6f/giphy.gif?cid=ecf05e47m5gutfx8766ywmkuojui9gm2kfoduai0u9rxac23&ep=v1_gifs_related&rid=giphy.gif&ct=s" alt="" width="20%">
+    </div>
+    </main>
+
+    <footer>
+        <p>
+            Desenvolvido por Matheus Guerra | 2024
+        </p>
+    </footer>
+    
+    
+    <script>
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+            
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "<p> Por favor, insira um numero valido </p>";
+                return;
+            }
+
+            var tableHTML = "<h3> Tabuada do " + numInput + "</h3><table>";
+            
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + numInput + "x" + i + "</td><td>"+ " = " + (numInput * i) + "</td></tr>"  ;         
+            }
+            tableHTML += "</table>"
+            tabuadaDiv.innerHTML = tableHTML;
+       }
+    </script>
+
+</body>
+</html>
